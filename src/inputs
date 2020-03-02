@@ -1,0 +1,48 @@
+
+using GroupAtlas
+info = OneAtlasInfo( Dict( :name => "A5", :q => 2 ) )
+DisplayAtlasInfo()
+DisplayAtlasInfo( "A5" )
+mats = AtlasGenerators( info )
+using AbstractAlgebra
+map( AbstractAlgebra.Generic.order, mats )
+info = OneAtlasInfo( Dict( :name => "A5", :ring => Nemo.ZZ ) )
+Main.GroupAtlas.BrowseAtlasInfo()
+Main.GroupAtlas.BrowseAtlasInfo( "A5" )
+
+###########################
+
+R,x = PolynomialRing( Nemo.QQ, "x" )
+pol = R([-1,1,1] )
+F,z = NumberField( pol, "z" )
+OneAtlasInfo( Dict( :name => "A5", :dim => 4, :fieldgen => z ) )  # over Z
+
+mats = OneAtlasInfo( Dict( :name => "A5", :dim => 3, :fieldgen => z ) )  # proper
+
+-> but now map( AbstractAlgebra.Generic.order, mats ) runs into an error!
+(order only for matrices over Z or Q?)
+
+
+###########################
+
+OneAtlasInfo( Dict( :name => "A5", :ringinfo => "Field([Sqrt(5)])" ) )
+AtlasGenerators( ans )
+
+###########################
+
+
+# problem to access 3-dim for A5 in char. 0
+
+julia> choice = Main.GroupAtlas.BrowseAtlasInfo( "A5" )
+1-element Array{Any,1}:
+ Dict{Symbol,Any}(:dim => 3,:id => "a",:path => "alt/A5/gap0/A5G1-Ar3aB0.g",:name => "A5",:tocID => "core",:filenum => 1,:ring => "Field([Sqrt(5)])")
+
+julia> mats = AtlasGenerators( choice[1] )
+julia> map( AbstractAlgebra.Generic.order, mats )
+ERROR: MethodError: no method matching order(::AbstractAlgebra.Generic.MatSpaceElem{Nemo.nf_elem})
+Closest candidates are:
+  order(::Nemo.fmpz_mat) at /export/home/sam/julia/packages/GroupAtlas/src/meataxe.jl:43
+  order(::Nemo.fq_nmod_mat) at /export/home/sam/julia/packages/GroupAtlas/src/meataxe.jl:44
+  order(::Nemo.GaloisField) at /home/sam/.julia/packages/Nemo/vR1pn/src/flint/gfp_elem.jl:63
+  ...
+

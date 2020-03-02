@@ -1,0 +1,23 @@
+name = "GroupAtlas"
+uuid = "0b0286b5-4020-4881-b0d3-ea81478332c9"
+authors = ["ThomasBreuer <sam@math.rwth-aachen.de>"]
+version = "0.1.0"
+
+[deps]
+AbstractAlgebra = "c3fe647b-3220-5bb0-a1ea-a7954cac585d"
+CodecZlib = "944b1d66-785c-5afd-91f1-9de20f533193"
+GAP = "c863536a-3901-11e9-33e7-d5cd0df7b904"
+GAPTypes = "cd4130c4-8d21-11e9-2a29-61e008680c2d"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+Markdown = "d6f4376e-aef5-505a-96c1-9c027394607a"
+Nemo = "2edaba10-b0f1-5616-af89-8c11ac63239a"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+Primes = "27ebfcd6-29c5-5fa9-bf4b-fb8fc14df3ae"
+Requires = "ae029012-a4dd-5104-9daa-d747884805df"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

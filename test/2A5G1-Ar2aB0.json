@@ -1,0 +1,12 @@
+{
+"comment": "converted from 2A5G1-Ar2aB0.g",
+"ringinfo": ["CyclotomicField",5],
+"dimensions": [2,2],
+"polynomial": [1,1,1,1,1],
+"denominator": 1,
+"generators": [
+[0,-1,
+1,0],
+[-1,[0,1,0,0],
+[1,1,1,1],0]]
+}
