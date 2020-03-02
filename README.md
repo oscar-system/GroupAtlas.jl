@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/oscar-system/GroupAtlas.jl.svg?branch=master)](https://travis-ci.com/oscar-system/GroupAtlas.jl)
+[![Code Coverage](https://codecov.io/github/oscar-system/GroupAtlas.jl/coverage.svg?branch=master&token=)](https://codecov.io/gh/oscar-system/GroupAtlas.jl)
+
 # GroupAtlas.jl Julia module
 
 ## Basic usage
