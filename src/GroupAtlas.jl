@@ -1,3 +1,9 @@
+"""
+  GroupAtlas.jl is a Julia interface to a database of generators
+  of permutation and matrix groups,
+  including the ones that are available in the
+  [Atlas of Group Representations](http://brauer.maths.qmul.ac.uk/Atlas/v3/).
+"""
 module GroupAtlas
 
 #############################################################################
